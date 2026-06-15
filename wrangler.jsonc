@@ -2,10 +2,13 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "portafolio2026",
   "compatibility_date": "2026-06-15",
+  "assets": {
+    "directory": "./dist"
+  },
   "kv_namespaces": [
     {
       "binding": "SESSION",
-      "id": "ec352e4842c742849ac4e373c4825e25",
-    },
-  ],
+      "id": "ec352e4842c742849ac4e373c4825e25"
+    }
+  ]
 }
