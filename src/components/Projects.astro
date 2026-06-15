@@ -1,10 +1,16 @@
 ---
+import { Image } from 'astro:assets';
+import project1Image from '../assets/projects/project1.png';
+import project2Image from '../assets/projects/project2.png';
+import project3Image from '../assets/projects/project3.png';
+import project4Image from '../assets/projects/project4.png';
+
 const projects = [
   {
     title: "E-Commerce API Architecture",
     description: "Highly scalable RESTful API built with NestJS applying Clean Architecture and SOLID principles. Integrated Redis caching to achieve a 40% reduction in response times for inventory queries.",
     tags: ["NEST.JS", "TYPESCRIPT", "POSTGRESQL", "REDIS", "JEST"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAb6Ao20iumtcwbFqZJYRBrUp5EzVFT7Dhi_wHcddhhrkbZl1BRhsnkOihodQ8SR6MDY_deYeovmPa3S4-8-9mZ6L0orhW44i2ia61Lmk0fQwFeiKSyWfgigSWe-A3QAty8yekauvvx6-pgzaapo_mTCmgx7u5CpNFHcgUCL25aPJ6WrKHMzK5yfyy1mBoqUtHPN25p44CWrUKSaRRaJmKhc0dvV-wl-wzwIGzMWDWjdHVqTbScfKqwPsi6YH-rQSPItAKifjEsQMM",
+    image: project1Image,
     imageAlt: "Dashboard illustrating database schema and API response visualizations",
     isPrivate: true,
     link: null
@@ -13,7 +19,7 @@ const projects = [
     title: "Corporate Website & SEO Platform",
     description: "High-performance enterprise site built using Astro JS component architecture. Optimized for speed and search engine indexing, scoring a perfect 100% rating on Google Lighthouse performance.",
     tags: ["ASTRO JS", "TAILWIND CSS", "HTML5", "SEO BEST PRACTICES"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtERPKpnn6sJlDhpwgWEAKOG7BKNTgqMNwfbIt9aGAe65IewKcbZ8ih1uNFW2wTuCeZEcrrYzekLfgCoSr9ZrJ6NDGljdqVlCvMN_osNL4D2NtqUW0vI0iZ8XNt3e6k1sHayuGicDw-tklZmsli2jCqvjmYrmqZSlU5NcgWWZGFPRGBzsods5OeGmJ43oH0dtpLHDUKj-tPkFSOnYvDouA-K7IrSXAET6YpCsPt_ay1z06iO-R6TjUsYbGBv4tTs6gGdofOGlL9Wk",
+    image: project2Image,
     imageAlt: "Server nodes representing high availability and optimized static generation",
     isPrivate: false,
     link: "https://cumtual.com"
@@ -22,7 +28,7 @@ const projects = [
     title: "E-Commerce Core & Inventory System",
     description: "End-to-end custom online storefront developed for a musical instruments retailer. Customized front-end templates using Liquid and JavaScript to deliver an interactive, responsive buying flow.",
     tags: ["SHOPIFY", "LIQUID", "JAVASCRIPT", "CSS", "INVENTORY MANAGEMENT"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC_6zuriK5Fh0ymM7bWzrunHo38jP3yc9WncptZSlEJ9eA59BrHxfk9zQ7-f4IEd7ab4djZ067Rk3T0qXUtt5b4SjcRAM2wwMcYelHBswKmiy8eCB--Ykp9029KqrAxe3Ww_sOUrgmxGb0wyokZXcyobT0QVRWlS_ZpQFXMV1JLMMTZgaAaZELfLggk-8b2WdxPnbp_ZtvZVvWx1bk79hKMqtSOufQnQfUIRMydMijZJtIJ8nZSTj2uys2IacboiMi-4IWTntHwTiA",
+    image: project3Image,
     imageAlt: "E-commerce platform displayed on a modern laptop screen",
     isPrivate: false,
     link: "https://musicalsantacecilia.com/"
@@ -31,7 +37,7 @@ const projects = [
     title: "Zetuna Corporate Portal",
     description: "Corporate business platform providing key information systems and core service portals. Initially developed using legacy web architectures and migrated frontend elements, still fully operational today.",
     tags: ["PHP", "JAVASCRIPT", "HTML5", "CSS3", "BUSINESS PLATFORM"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBADqx3InEUkcBPirP2RrpEWkvN4MSOtTwQ4JpKVuq4rU4G4EH3015UyhsPRl7Ub8dseoo1fCsnvy_lInK5ws0H5UST8XDOgDvUYb-mfUOTXpHQOUZs-jgMkSLQzyvAeUbTW_fzORA1WmNoeoJN3uIwQyckvvqD3wXT5twK6cIMnSlpoF8SHijA2klrJzrVE_B7qZWWqfPqQHgFFfen3xRW7aGNp8mArpk1nGOTizcjh555AzuXh-OD7UpqFu_KLokClzD_EpR30ZM",
+    image: project4Image,
     imageAlt: "A macro close-up of computer code representing systems engineering",
     isPrivate: false,
     link: "https://www.zetuna.com.mx/"
@@ -54,9 +60,11 @@ const projects = [
       <div class="group relative overflow-hidden glass-card rounded-xl inner-glow hover:glass-card-hover flex flex-col h-full reveal-on-scroll">
         <!-- Project Image Container -->
         <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden relative bg-black/40 border-b border-outline-variant/10">
-          <img 
+          <Image 
             src={project.image} 
             alt={project.imageAlt}
+            width={800}
+            height={450}
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 grayscale group-hover:grayscale-0"
             loading="lazy"
           />
