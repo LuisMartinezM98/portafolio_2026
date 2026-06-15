@@ -1,0 +1,73 @@
+---
+const coreSkills = ["TypeScript", "React", "Node.js", "NestJS", "PostgreSQL", "Jest"];
+
+const skillGroups = [
+  {
+    category: "Languages",
+    skills: ["TypeScript", "JavaScript", "PHP", "SQL", "HTML/CSS"]
+  },
+  {
+    category: "Backend & APIs",
+    skills: ["Node.js", "Nest.js", "REST APIs", "Object-Oriented Programming"]
+  },
+  {
+    category: "Frontend UI",
+    skills: ["React", "Next.js", "Astro JS", "Angular", "Tailwind CSS"]
+  },
+  {
+    category: "Databases & Caching",
+    skills: ["PostgreSQL", "MySQL", "Redis", "SQL Server"]
+  },
+  {
+    category: "Cloud, DevOps & Tools",
+    skills: ["AWS (Lambda)", "Docker", "Git", "GitHub", "Salesforce CRM", "VS Code", "Cursor"]
+  },
+  {
+    category: "Testing & QA",
+    skills: ["Jest", "Unit Testing", "Integration Testing"]
+  },
+  {
+    category: "AI Engineering Tools",
+    skills: ["GitHub Copilot", "ChatGPT", "Claude", "Gemini"]
+  }
+];
+---
+<section class="bg-surface-container-low py-32 px-8" id="stack">
+  <div class="max-w-[1280px] mx-auto">
+    <div class="text-center mb-16 reveal-on-scroll">
+      <span class="font-geist text-[14px] font-medium tracking-[0.15em] text-primary uppercase">The Toolkit</span>
+      <h2 class="font-geist text-[48px] font-bold leading-[1.2] tracking-[-0.02em] text-on-surface mt-4">Commanding the Modern Web</h2>
+    </div>
+    
+    <!-- Core Stack (Large Stitch-style elements) -->
+    <div class="flex flex-wrap justify-center gap-6 mb-20 reveal-on-scroll">
+      {coreSkills.map(skill => (
+        <div class="glass-card px-8 py-6 rounded-xl flex items-center gap-4 hover:scale-105 transform transition-all duration-300 group cursor-default inner-glow hover:glass-card-hover">
+          <span class="font-geist text-[24px] md:text-[32px] font-semibold text-on-surface group-hover:text-primary transition-colors duration-300">
+            {skill}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Secondary Stack Categories -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 reveal-on-scroll">
+      {skillGroups.map(group => (
+        <div class="glass-card p-6 rounded-xl inner-glow hover:glass-card-hover flex flex-col gap-4">
+          <h3 class="font-geist text-[16px] font-bold tracking-[0.05em] text-secondary uppercase border-b border-outline-variant/20 pb-3">
+            {group.category}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {group.skills.map(skill => (
+              <span class="bg-surface px-3 py-1.5 rounded font-geist text-[13px] font-medium text-on-surface-variant/90 border border-outline-variant/10 hover:border-primary/30 transition-colors duration-300">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>

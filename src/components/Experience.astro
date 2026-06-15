@@ -1,0 +1,102 @@
+---
+const experiences = [
+  {
+    role: "Web Developer (Consultant for Volkswagen)",
+    company: "Alten México",
+    location: "Puebla, México",
+    period: "Feb 2025 – Sep 2025",
+    tags: ["React", "Node.js", "AWS Lambda", "Salesforce CRM", "Jest", "AI Tools"],
+    details: [
+      "Optimized team operational efficiency, reducing development and software delivery times by up to 75% through advanced prompt engineering and AI tools (Cursor, Claude, Copilot).",
+      "Designed and developed a comprehensive web platform using React and Node.js for managing and visualizing vehicle maintenance intake orders in real time.",
+      "Implemented and maintained AWS Lambda functions to process and automate data workflows coming from Facebook and Google marketing campaigns.",
+      "Assured seamless integration and high-availability data consistency across internal databases and Salesforce CRM for Volkswagen Group digital services.",
+      "Guaranteed application resilience and secure continuous deployment (CI/CD) in production environments by designing unit and integration tests with Jest."
+    ]
+  },
+  {
+    role: "Full Stack Developer",
+    company: "Zetuna",
+    location: "Puebla, México",
+    period: "Jan 2024 – Jan 2025",
+    tags: ["Astro JS", "Tailwind CSS", "Node.js", "React", "Jest", "PHP Migration"],
+    details: [
+      "Spearheaded the architectural migration of legacy services from PHP to Node.js, achieving a 75% reduction in REST API response times for a high-traffic platform serving over 500,000 daily requests.",
+      "Migrated core frontend systems to React, ensuring system stability and performance through automated testing with Jest.",
+      "Developed and deployed the company’s official website using Astro JS and Tailwind CSS, drastically optimizing load speeds and user retention.",
+      "Designed and integrated an internal IT ticketing system, automating technical support and significantly reducing resolution times across corporate offices and retail branches."
+    ]
+  },
+  {
+    role: "Frontend Developer Intern",
+    company: "Itransition Group",
+    location: "Remote",
+    period: "May 2022 – Dec 2022",
+    tags: ["React", "JavaScript", "Node.js", "Salesforce CRM", "Agile"],
+    details: [
+      "Developed and optimized web applications using JavaScript, React, and Node.js under Agile methodologies and mentorship from senior engineers.",
+      "Collaborated on the fluid integration of core web applications with Salesforce CRM, ensuring consistent data pipelines."
+    ]
+  },
+  {
+    role: "Web & Mobile Development Intern",
+    company: "Mobile Applications Laboratory (BUAP)",
+    location: "Puebla, México",
+    period: "Aug 2022 – Feb 2023",
+    tags: ["TypeScript", "Node.js", "React", "Angular", "Web Accessibility"],
+    details: [
+      "Collaborated within the development ecosystem utilizing JavaScript, TypeScript, Node.js, React, and Angular.",
+      "Designed and optimized academic web portals for the computer science faculty, improving platform usability and accessibility compliance indexes."
+    ]
+  }
+];
+---
+<section class="py-32 px-8 max-w-[1280px] mx-auto" id="experience">
+  <div class="mb-16 reveal-on-scroll">
+    <span class="font-geist text-[14px] font-medium tracking-[0.15em] text-primary uppercase">The Timeline</span>
+    <h2 class="font-geist text-[48px] font-bold leading-[1.2] tracking-[-0.02em] text-on-surface mt-4">Professional Experience</h2>
+  </div>
+
+  <div class="relative border-l border-outline-variant/30 ml-4 md:ml-6 space-y-16">
+    {experiences.map((exp) => (
+      <div class="relative pl-8 md:pl-12 group reveal-on-scroll">
+        <!-- Timeline bullet icon -->
+        <span class="absolute -left-[13px] top-1.5 flex h-6 h-6 items-center justify-center rounded-full bg-background border-2 border-outline-variant group-hover:border-primary transition-colors duration-300">
+          <span class="h-2 w-2 rounded-full bg-outline-variant group-hover:bg-primary transition-colors duration-300"></span>
+        </span>
+        
+        <div class="glass-card p-8 rounded-xl inner-glow hover:glass-card-hover">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+            <div>
+              <h3 class="font-geist text-[22px] font-bold text-on-surface group-hover:text-primary transition-colors duration-300">{exp.role}</h3>
+              <p class="font-geist text-[16px] text-on-surface-variant font-medium mt-1">
+                {exp.company} <span class="text-outline-variant mx-2">•</span> <span class="text-on-surface-variant/70 font-normal">{exp.location}</span>
+              </p>
+            </div>
+            <span class="font-geist text-[14px] font-medium tracking-[0.05em] text-secondary bg-secondary-container/10 px-3 py-1 rounded border border-secondary/20 self-start md:self-center">
+              {exp.period}
+            </span>
+          </div>
+
+          <!-- Skills tags used in the role -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            {exp.tags.map(tag => (
+              <span class="bg-surface-container-high text-on-surface-variant/80 font-geist text-[11px] font-medium px-2.5 py-1 rounded">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <!-- Job details bullets -->
+          <ul class="space-y-3 font-inter text-[15px] leading-[1.6] text-on-surface-variant/90 list-disc list-outside pl-4">
+            {exp.details.map((detail) => (
+              <li>{detail}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<div class="section-divider"></div>

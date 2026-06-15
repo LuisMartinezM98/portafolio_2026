@@ -1,0 +1,115 @@
+---
+const projects = [
+  {
+    title: "E-Commerce API Architecture",
+    description: "Highly scalable RESTful API built with NestJS applying Clean Architecture and SOLID principles. Integrated Redis caching to achieve a 40% reduction in response times for inventory queries.",
+    tags: ["NEST.JS", "TYPESCRIPT", "POSTGRESQL", "REDIS", "JEST"],
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAb6Ao20iumtcwbFqZJYRBrUp5EzVFT7Dhi_wHcddhhrkbZl1BRhsnkOihodQ8SR6MDY_deYeovmPa3S4-8-9mZ6L0orhW44i2ia61Lmk0fQwFeiKSyWfgigSWe-A3QAty8yekauvvx6-pgzaapo_mTCmgx7u5CpNFHcgUCL25aPJ6WrKHMzK5yfyy1mBoqUtHPN25p44CWrUKSaRRaJmKhc0dvV-wl-wzwIGzMWDWjdHVqTbScfKqwPsi6YH-rQSPItAKifjEsQMM",
+    imageAlt: "Dashboard illustrating database schema and API response visualizations",
+    isPrivate: true,
+    link: null
+  },
+  {
+    title: "Corporate Website & SEO Platform",
+    description: "High-performance enterprise site built using Astro JS component architecture. Optimized for speed and search engine indexing, scoring a perfect 100% rating on Google Lighthouse performance.",
+    tags: ["ASTRO JS", "TAILWIND CSS", "HTML5", "SEO BEST PRACTICES"],
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtERPKpnn6sJlDhpwgWEAKOG7BKNTgqMNwfbIt9aGAe65IewKcbZ8ih1uNFW2wTuCeZEcrrYzekLfgCoSr9ZrJ6NDGljdqVlCvMN_osNL4D2NtqUW0vI0iZ8XNt3e6k1sHayuGicDw-tklZmsli2jCqvjmYrmqZSlU5NcgWWZGFPRGBzsods5OeGmJ43oH0dtpLHDUKj-tPkFSOnYvDouA-K7IrSXAET6YpCsPt_ay1z06iO-R6TjUsYbGBv4tTs6gGdofOGlL9Wk",
+    imageAlt: "Server nodes representing high availability and optimized static generation",
+    isPrivate: false,
+    link: "https://cumtual.com"
+  },
+  {
+    title: "E-Commerce Core & Inventory System",
+    description: "End-to-end custom online storefront developed for a musical instruments retailer. Customized front-end templates using Liquid and JavaScript to deliver an interactive, responsive buying flow.",
+    tags: ["SHOPIFY", "LIQUID", "JAVASCRIPT", "CSS", "INVENTORY MANAGEMENT"],
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC_6zuriK5Fh0ymM7bWzrunHo38jP3yc9WncptZSlEJ9eA59BrHxfk9zQ7-f4IEd7ab4djZ067Rk3T0qXUtt5b4SjcRAM2wwMcYelHBswKmiy8eCB--Ykp9029KqrAxe3Ww_sOUrgmxGb0wyokZXcyobT0QVRWlS_ZpQFXMV1JLMMTZgaAaZELfLggk-8b2WdxPnbp_ZtvZVvWx1bk79hKMqtSOufQnQfUIRMydMijZJtIJ8nZSTj2uys2IacboiMi-4IWTntHwTiA",
+    imageAlt: "E-commerce platform displayed on a modern laptop screen",
+    isPrivate: false,
+    link: "https://musicalsantacecilia.com/"
+  },
+  {
+    title: "Zetuna Corporate Portal",
+    description: "Corporate business platform providing key information systems and core service portals. Initially developed using legacy web architectures and migrated frontend elements, still fully operational today.",
+    tags: ["PHP", "JAVASCRIPT", "HTML5", "CSS3", "BUSINESS PLATFORM"],
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBADqx3InEUkcBPirP2RrpEWkvN4MSOtTwQ4JpKVuq4rU4G4EH3015UyhsPRl7Ub8dseoo1fCsnvy_lInK5ws0H5UST8XDOgDvUYb-mfUOTXpHQOUZs-jgMkSLQzyvAeUbTW_fzORA1WmNoeoJN3uIwQyckvvqD3wXT5twK6cIMnSlpoF8SHijA2klrJzrVE_B7qZWWqfPqQHgFFfen3xRW7aGNp8mArpk1nGOTizcjh555AzuXh-OD7UpqFu_KLokClzD_EpR30ZM",
+    imageAlt: "A macro close-up of computer code representing systems engineering",
+    isPrivate: false,
+    link: "https://www.zetuna.com.mx/"
+  }
+];
+---
+<section class="py-32 px-8 max-w-[1280px] mx-auto" id="projects">
+  <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal-on-scroll">
+    <div>
+      <span class="font-geist text-[14px] font-medium tracking-[0.15em] text-primary uppercase">Selected Works</span>
+      <h2 class="font-geist text-[48px] font-bold leading-[1.2] tracking-[-0.02em] text-on-surface mt-4">Crafting Digital Solutions</h2>
+    </div>
+    <div class="font-inter text-[16px] text-on-surface-variant max-w-md md:text-right">
+      Case studies of client and enterprise-grade applications.
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {projects.map(project => (
+      <div class="group relative overflow-hidden glass-card rounded-xl inner-glow hover:glass-card-hover flex flex-col h-full reveal-on-scroll">
+        <!-- Project Image Container -->
+        <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden relative bg-black/40 border-b border-outline-variant/10">
+          <img 
+            src={project.image} 
+            alt={project.imageAlt}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 grayscale group-hover:grayscale-0"
+            loading="lazy"
+          />
+          {project.isPrivate ? (
+            <div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/30 flex items-center gap-1.5 z-10 shadow-lg">
+              <span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+              <span class="font-geist text-[10px] font-medium tracking-[0.05em] text-secondary uppercase">Confidential</span>
+            </div>
+          ) : (
+            <div class="absolute top-4 right-4 bg-primary/10 backdrop-blur-md px-3 py-1 rounded-full border border-primary/30 flex items-center gap-1.5 z-10 shadow-lg">
+              <span class="material-symbols-outlined text-[14px] text-primary">public</span>
+              <span class="font-geist text-[10px] font-medium tracking-[0.05em] text-primary uppercase">Active Site</span>
+            </div>
+          )}
+        </div>
+
+        <!-- Project Details -->
+        <div class="p-8 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="flex justify-between items-start mb-4 gap-4">
+              {project.isPrivate ? (
+                <h3 class="font-geist text-[22px] font-bold text-on-surface">
+                  {project.title}
+                </h3>
+              ) : (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" class="flex justify-between items-start w-full group/title">
+                  <h3 class="font-geist text-[22px] font-bold text-on-surface group-hover:text-primary transition-colors duration-300 group-hover/title:underline">
+                    {project.title}
+                  </h3>
+                  <span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">open_in_new</span>
+                </a>
+              )}
+            </div>
+            
+            <p class="font-inter text-[15px] leading-[1.6] text-on-surface-variant/90 mb-8">
+              {project.description}
+            </p>
+          </div>
+
+          <div>
+            <!-- Tech badges -->
+            <div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/10">
+              {project.tags.map(tag => (
+                <span class="bg-surface px-2.5 py-1 rounded font-geist text-[10px] font-medium tracking-[0.05em] text-on-surface-variant/70 border border-outline-variant/10">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<div class="section-divider"></div>

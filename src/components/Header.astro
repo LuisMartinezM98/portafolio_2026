@@ -1,0 +1,61 @@
+---
+---
+<nav class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-3xl border-b border-outline-variant/10">
+  <div class="max-w-[1280px] mx-auto px-8 h-20 flex items-center justify-between">
+    <div class="flex items-center gap-2 cursor-pointer active:scale-95" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="font-geist text-[24px] font-bold tracking-tighter text-on-surface">LUIS.DEV</span>
+    </div>
+    
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300" href="#experience">EXPERIENCE</a>
+      <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300" href="#stack">STACK</a>
+      <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300" href="#projects">PROJECTS</a>
+      <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300 mr-2" href="#contact">CONTACT</a>
+      <a class="bg-primary/15 border border-primary/30 text-primary hover:bg-primary/25 px-5 py-2 font-geist text-[14px] font-medium tracking-[0.05em] rounded transition-all active:scale-95 flex items-center gap-2 inner-glow" href="/Luis_Martinez_Resume_EN.pdf" download="Luis_Martinez_Resume_EN.pdf">
+        <span class="material-symbols-outlined text-[16px]">download</span> CV
+      </a>
+    </div>
+
+    <!-- Mobile Nav Toggle -->
+    <button id="mobile-menu-toggle" class="md:hidden flex items-center p-2 text-on-surface hover:text-primary transition-colors">
+      <span class="material-symbols-outlined" id="menu-icon">menu</span>
+    </button>
+  </div>
+  
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden border-b border-outline-variant/10 bg-background/95 backdrop-blur-3xl px-8 py-6 flex flex-col gap-6">
+    <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300 py-2" href="#experience">EXPERIENCE</a>
+    <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300 py-2" href="#stack">STACK</a>
+    <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300 py-2" href="#projects">PROJECTS</a>
+    <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300 py-2 mb-2" href="#contact">CONTACT</a>
+    <a class="bg-primary/15 border border-primary/30 text-primary px-5 py-3 font-geist text-[14px] font-medium tracking-[0.05em] rounded transition-all active:scale-95 flex items-center justify-center gap-2 inner-glow" href="/Luis_Martinez_Resume_EN.pdf" download="Luis_Martinez_Resume_EN.pdf">
+      <span class="material-symbols-outlined text-[18px]">download</span> Download CV
+    </a>
+  </div>
+</nav>
+
+<script>
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  toggleBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    if (mobileMenu?.classList.contains('hidden')) {
+      if (menuIcon) menuIcon.textContent = 'menu';
+    } else {
+      if (menuIcon) menuIcon.textContent = 'close';
+    }
+  });
+
+  // Close menu when link is clicked
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      if (menuIcon) menuIcon.textContent = 'menu';
+    });
+  });
+</script>
