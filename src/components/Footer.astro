@@ -1,12 +1,13 @@
 ---
+import Icon from './Icon.astro';
 ---
+
 <footer class="bg-background border-t border-outline-variant/10 w-full py-16">
   <div class="max-w-[1280px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
     <div class="flex items-center gap-2 cursor-pointer font-geist text-[20px] font-bold text-on-surface hover:text-primary transition-colors" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-      <span class="material-symbols-outlined text-primary text-[18px]">terminal</span>
+      <Icon name="terminal" size={18} class="text-primary" />
       LUIS.DEV
     </div>
-    
     <div class="font-geist text-[14px] font-medium tracking-[0.05em] text-secondary opacity-80 hover:opacity-100 transition-all cursor-default">
       © 2026 Built with Precision
     </div>

@@ -1,9 +1,11 @@
 ---
+import Icon from './Icon.astro';
 ---
+
 <nav class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-3xl border-b border-outline-variant/10">
   <div class="max-w-[1280px] mx-auto px-8 h-20 flex items-center justify-between">
     <div class="flex items-center gap-2 cursor-pointer active:scale-95" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-      <span class="material-symbols-outlined text-primary">terminal</span>
+      <Icon name="terminal" size={24} class="text-primary" />
       <span class="font-geist text-[24px] font-bold tracking-tighter text-on-surface">LUIS.DEV</span>
     </div>
     
@@ -14,13 +16,14 @@
       <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300" href="#projects">PROJECTS</a>
       <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300 mr-2" href="#contact">CONTACT</a>
       <a class="bg-primary/15 border border-primary/30 text-primary hover:bg-primary/25 px-5 py-2 font-geist text-[14px] font-medium tracking-[0.05em] rounded transition-all active:scale-95 flex items-center gap-2 inner-glow" href="/Luis_Martinez_Resume_EN.pdf" download="Luis_Martinez_Resume_EN.pdf">
-        <span class="material-symbols-outlined text-[16px]">download</span> CV
+        <Icon name="download" size={16} class="text-primary" /> CV
       </a>
     </div>
 
     <!-- Mobile Nav Toggle -->
     <button id="mobile-menu-toggle" class="md:hidden flex items-center p-2 text-on-surface hover:text-primary transition-colors">
-      <span class="material-symbols-outlined" id="menu-icon">menu</span>
+      <Icon name="menu" id="menu-icon-open" size={24} />
+      <Icon name="close" id="menu-icon-close" size={24} class="hidden" />
     </button>
   </div>
   
@@ -31,7 +34,7 @@
     <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300 py-2" href="#projects">PROJECTS</a>
     <a class="font-geist text-[14px] font-medium tracking-[0.05em] text-on-surface-variant hover:text-primary transition-colors duration-300 py-2 mb-2" href="#contact">CONTACT</a>
     <a class="bg-primary/15 border border-primary/30 text-primary px-5 py-3 font-geist text-[14px] font-medium tracking-[0.05em] rounded transition-all active:scale-95 flex items-center justify-center gap-2 inner-glow" href="/Luis_Martinez_Resume_EN.pdf" download="Luis_Martinez_Resume_EN.pdf">
-      <span class="material-symbols-outlined text-[18px]">download</span> Download CV
+      <Icon name="download" size={18} class="text-primary" /> Download CV
     </a>
   </div>
 </nav>
@@ -39,23 +42,21 @@
 <script>
   const toggleBtn = document.getElementById('mobile-menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
 
   toggleBtn?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
-    if (mobileMenu?.classList.contains('hidden')) {
-      if (menuIcon) menuIcon.textContent = 'menu';
-    } else {
-      if (menuIcon) menuIcon.textContent = 'close';
-    }
+    menuIconOpen?.classList.toggle('hidden');
+    menuIconClose?.classList.toggle('hidden');
   });
 
-  // Close menu when link is clicked
   const mobileLinks = mobileMenu?.querySelectorAll('a');
   mobileLinks?.forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu?.classList.add('hidden');
-      if (menuIcon) menuIcon.textContent = 'menu';
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
     });
   });
 </script>

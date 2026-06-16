@@ -1,5 +1,7 @@
 ---
+import Icon from './Icon.astro';
 ---
+
 <section class="relative pt-40 pb-32 px-8 max-w-[1280px] mx-auto min-h-[700px] flex flex-col justify-center overflow-hidden">
   <!-- Soft background radial glow -->
   <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
@@ -20,7 +22,7 @@
     
     <div class="flex flex-col sm:flex-row gap-4">
       <a class="bg-primary text-on-primary hover:opacity-90 px-8 py-4 font-geist text-[14px] font-medium tracking-[0.05em] rounded flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg shadow-primary/10" href="#projects">
-        VIEW PROJECTS <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+        VIEW PROJECTS <Icon name="arrow-outward" size={18} />
       </a>
       <a class="border border-outline-variant/30 text-on-surface hover:bg-surface-container-low px-8 py-4 font-geist text-[14px] font-medium tracking-[0.05em] rounded flex items-center justify-center gap-2 transition-all active:scale-95" href="#stack">
         TECH TOOLKIT
