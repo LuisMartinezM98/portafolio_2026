@@ -20,9 +20,9 @@
 
   <br />
 
-  <a href="https://luismartinez.dev">🌐 Live Demo</a>
+  <a href="https://luismartinezm.dev">🌐 Web site</a>
   &nbsp;·&nbsp;
-  <a href="mailto:luiizmartinez@gmail.com">✉️ Contact</a>
+  <a href="mailto:contact@luismartinezm.dev">✉️ Contact</a>
 </div>
 
 <br />
