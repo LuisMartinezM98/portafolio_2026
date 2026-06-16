@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/LuisMartinezM98/portafolio_2026/compare/v1.0.0...v1.0.1) (2026-06-16)
+
+
+### Bug Fixes
+
+* actualizar enlaces en el README para corregir la URL del sitio web y el correo de contacto ([#4](https://github.com/LuisMartinezM98/portafolio_2026/issues/4)) ([aaedafb](https://github.com/LuisMartinezM98/portafolio_2026/commit/aaedafbb737a64bebc0375fd572e2bd15f1c6102))
+
 ## 1.0.0 (2026-06-16)
 
 
